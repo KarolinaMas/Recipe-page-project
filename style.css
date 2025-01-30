@@ -1,3 +1,5 @@
+/* general styling */
+
 h1,
 h2 {
   font-family: "Young Serif", serif;
@@ -6,6 +8,8 @@ h2 {
 
 h2 {
   color: #854632;
+  margin-bottom: 24px;
+  margin-top: 32px;
 }
 
 main {
@@ -17,6 +21,15 @@ main {
   padding: 40px 32px;
 }
 
+.ingredients-list,
+.instructions-list,
+.preparation-list {
+  display: flex;
+  flex-direction: column;
+}
+
+/* recipe description section */
+
 h1 {
   line-height: 1;
   font-size: 37px;
@@ -24,10 +37,11 @@ h1 {
   margin-bottom: 24px;
 }
 
-.recipe-description,
-.preparation-time {
+.recipe-description {
   margin-bottom: 32px;
 }
+
+/* preparation time box */
 
 .preparation-time {
   background-color: #fff7fb;
@@ -44,8 +58,8 @@ h1 {
 
 .preparation-list {
   padding-left: 20px;
-  list-style: none;
   padding-left: 8px;
+  gap: 14px;
 }
 
 .preparation-list li {
@@ -54,12 +68,75 @@ h1 {
   gap: 22px;
 }
 
-.preparation-list li::before {
+.preparation-list li::before,
+.ingredients-list li::before {
   content: "•";
   font-size: 1.2em;
   color: #7a284e;
 }
 
-.preparation-list p {
-  /* padding-left: 18px; */
+/* ingredients list section */
+
+.ingredients,
+.instructions {
+  border-bottom: 1px solid #f3e5d7;
+  padding-bottom: 32px;
+}
+
+.ingredients {
+  gap: 5px;
+}
+
+.ingredients-list li {
+  display: flex;
+  gap: 28px;
+  align-items: center;
+}
+
+/* instructions list section */
+
+.instructions-list {
+  gap: 10px;
+  counter-reset: list-counter;
+}
+
+.instructions-list li {
+  display: flex;
+  gap: 18px;
+  counter-increment: list-counter;
+  list-style: none;
+}
+
+.instructions-list li::before {
+  content: counter(list-counter) ".";
+  color: #7a284e;
+  font-weight: 700;
+  padding-left: 8px;
+}
+
+/* nutrition list section */
+
+.nutrition-list {
+  margin-top: 24px;
+}
+
+.nutrition-list li {
+  border-bottom: 1px solid #f3e5d7;
+  padding: 15px 0px 15px 17px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.nutrition-list span {
+  font-weight: 700;
+  color: #854632;
+}
+
+.nutrition-list li:last-child {
+  border-bottom: none;
+  padding-bottom: 0px;
+}
+
+.nutrition-list li:first-child {
+  padding-top: 0px;
 }
