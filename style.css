@@ -1,5 +1,9 @@
 /* general styling */
 
+body {
+  background-color: #f3e5d7;
+}
+
 h1,
 h2 {
   font-family: "Young Serif", serif;
@@ -8,17 +12,19 @@ h2 {
 
 h2 {
   color: #854632;
-  margin-bottom: 24px;
-  margin-top: 32px;
+  margin-bottom: 1.5rem;
+  margin-top: 2rem;
 }
 
 main {
   margin: 0 auto;
-  max-width: 375px;
+  min-width: 375px;
+  max-width: 616px;
+  background-color: white;
 }
 
 .main-container {
-  padding: 40px 32px;
+  padding: 2.5em 2em;
 }
 
 .ingredients-list,
@@ -32,46 +38,46 @@ main {
 
 h1 {
   line-height: 1;
-  font-size: 37px;
+  font-size: 2.3125rem;
   color: #312e2c;
-  margin-bottom: 24px;
+  margin-bottom: 1.5rem;
 }
 
 .recipe-description {
-  margin-bottom: 32px;
+  margin-bottom: 2em;
 }
 
 /* preparation time box */
 
 .preparation-time {
   background-color: #fff7fb;
-  padding: 24px;
+  padding: 1.5em;
   border-radius: 12px;
 }
 
 .preparation-time .heading {
-  font-size: 20px;
+  font-size: 1.25rem;
   font-weight: 600;
   color: #7a284e;
-  margin-bottom: 16px;
+  margin-bottom: 1em;
 }
 
 .preparation-list {
-  padding-left: 20px;
-  padding-left: 8px;
-  gap: 14px;
+  padding-left: 1.25em;
+  padding-left: 0.5em;
+  gap: 0.875em;
 }
 
 .preparation-list li {
   display: flex;
   align-items: center;
-  gap: 22px;
+  gap: 1.375em;
 }
 
 .preparation-list li::before,
 .ingredients-list li::before {
   content: "•";
-  font-size: 1.2em;
+  font-size: 1.2rem;
   color: #7a284e;
 }
 
@@ -80,29 +86,29 @@ h1 {
 .ingredients,
 .instructions {
   border-bottom: 1px solid #f3e5d7;
-  padding-bottom: 32px;
+  padding-bottom: 2em;
 }
 
 .ingredients {
-  gap: 5px;
+  gap: 0.3125em;
 }
 
 .ingredients-list li {
   display: flex;
-  gap: 28px;
+  gap: 1.75em;
   align-items: center;
 }
 
 /* instructions list section */
 
 .instructions-list {
-  gap: 10px;
+  gap: 0.625em;
   counter-reset: list-counter;
 }
 
 .instructions-list li {
   display: flex;
-  gap: 18px;
+  gap: 1.125em;
   counter-increment: list-counter;
   list-style: none;
 }
@@ -111,18 +117,18 @@ h1 {
   content: counter(list-counter) ".";
   color: #7a284e;
   font-weight: 700;
-  padding-left: 8px;
+  padding-left: 0.5em;
 }
 
 /* nutrition list section */
 
 .nutrition-list {
-  margin-top: 24px;
+  margin-top: 1.5em;
 }
 
 .nutrition-list li {
   border-bottom: 1px solid #f3e5d7;
-  padding: 15px 0px 15px 17px;
+  padding: 0.9375em 0px 0.9375em 1.0625em;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -139,4 +145,23 @@ h1 {
 
 .nutrition-list li:first-child {
   padding-top: 0px;
+}
+
+/* media queries */
+
+@media (min-width: 616px) {
+  img {
+    margin-bottom: 2.5em;
+    border-radius: 12px;
+  }
+
+  .main-container {
+    padding: 0;
+  }
+
+  main {
+    padding: 2.5em;
+    border-radius: 24px;
+    margin: 8em auto;
+  }
 }
