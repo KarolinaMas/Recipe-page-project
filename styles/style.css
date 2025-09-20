@@ -19,8 +19,17 @@ body {
 }
 
 .card__img {
-  display: block;
-  width: 100%;
+  height: 171px;
+  object-fit: cover;
+}
+
+/* SHARED LIST STYLES */
+
+.card__ingredients-list,
+.card__instructions-list,
+.card__preparation-list {
+  display: flex;
+  flex-direction: column;
 }
 
 /* TYPOGRAPHY */
@@ -43,13 +52,6 @@ body {
   margin-bottom: 1.2rem;
   margin-top: 1.7rem;
   font-size: 1.75rem;
-}
-
-.card__ingredients-list,
-.card__instructions-list,
-.card__preparation-list {
-  display: flex;
-  flex-direction: column;
 }
 
 /* DESCRIPTION SECTION */
@@ -108,6 +110,7 @@ body {
   content: "•";
   font-size: 1.2rem;
   color: #854632;
+  padding-left: 0.5em;
 }
 
 /* INSTRUCTIONS SECTION */
@@ -144,7 +147,7 @@ body {
 
 .card__nutrition-item {
   border-bottom: 1px solid #f3e5d7;
-  padding: 0.9375em 0px 0.9375em 1.0625em;
+  padding: 0.9375em 0px 0.9375em 2.0625em;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
@@ -165,30 +168,32 @@ body {
 
 /* MEDIA QUERIES */
 
-@media (min-width: 616px) {
+@media (min-width: 375px) {
   .card__img {
-    margin-bottom: 2.5em;
-    border-radius: 12px;
+    height: auto;
   }
+}
 
-  .card__content {
-    padding: 0;
-  }
-
+@media (min-width: 616px) {
   .card {
     padding: 2.5em;
     border-radius: 24px;
     margin: 8em auto;
+  }
+
+  .card__img {
+    margin-bottom: 2.5em;
+    border-radius: 12px;
+    height: 300px;
+  }
+
+  .card__content {
+    padding: 0;
   }
 }
 
 @media (min-width: 800px) {
   .card {
     max-width: 763px;
-  }
-
-  .card__img {
-    height: 300px;
-    object-fit: cover;
   }
 }
