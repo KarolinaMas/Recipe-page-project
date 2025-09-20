@@ -1,166 +1,181 @@
-/* general styling */
+/* GLOBAL STYLES */
 
 body {
   background-color: #f3e5d7;
 }
 
-h1,
-h2 {
+/* CARD BLOCK*/
+
+.card {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 616px;
+  background-color: white;
+  color: #5f564d;
+}
+
+.card__content {
+  padding: 2.5em 2em;
+}
+
+.card__img {
+  display: block;
+  width: 100%;
+}
+
+/* TYPOGRAPHY */
+
+.card__title,
+.card__section-title {
   font-family: "Young Serif", serif;
   font-weight: 400;
 }
 
-h2 {
+.card__title {
+  line-height: 1;
+  font-size: 2.3125rem;
+  margin-bottom: 1.5rem;
+  color: #312e2c;
+}
+
+.card__section-title {
   color: #854632;
   margin-bottom: 1.2rem;
   margin-top: 1.7rem;
   font-size: 1.75rem;
 }
 
-main {
-  margin: 0 auto;
-  min-width: 320px;
-  max-width: 616px;
-  background-color: white;
-}
-
-.main-container {
-  padding: 2.5em 2em;
-}
-
-.ingredients-list,
-.instructions-list,
-.preparation-list {
+.card__ingredients-list,
+.card__instructions-list,
+.card__preparation-list {
   display: flex;
   flex-direction: column;
 }
 
-/* recipe description section */
+/* DESCRIPTION SECTION */
 
-h1 {
-  line-height: 1;
-  font-size: 2.3125rem;
-  color: #312e2c;
-  margin-bottom: 1.5rem;
-}
-
-.recipe-description {
+.card__description {
   margin-bottom: 2em;
 }
 
-/* preparation time box */
+/* PREPARATION TIME BOX */
 
-.preparation-time {
+.card__preparation {
   background-color: #fff7fb;
   padding: 1.5em;
   border-radius: 12px;
 }
 
-.preparation-time .heading {
+.card__preparation-title {
   font-size: 1.25rem;
   font-weight: 600;
   color: #7a284e;
   margin-bottom: 1em;
 }
 
-.preparation-list {
-  padding-left: 1.25em;
+.card__preparation-list {
   padding-left: 0.5em;
   gap: 0.2em;
 }
 
-.preparation-list li {
+.card__preparation-item {
   display: flex;
   align-items: center;
   gap: 1.375em;
 }
 
-.preparation-list li::before,
-.ingredients-list li::before {
+.card__preparation-item::before {
   content: "•";
   font-size: 1.2rem;
   color: #7a284e;
 }
 
-/* ingredients list section */
+/* INGRIDIENTS SECTION */
 
-.ingredients,
-.instructions {
+.card__ingredients {
+  gap: 0.3125em;
   border-bottom: 1px solid #f3e5d7;
   padding-bottom: 2em;
 }
 
-.ingredients {
-  gap: 0.3125em;
-}
-
-.ingredients-list li {
+.card__ingredients-item {
   display: flex;
   gap: 1.75em;
   align-items: center;
 }
 
-/* instructions list section */
+.card__ingredients-item::before {
+  content: "•";
+  font-size: 1.2rem;
+  color: #854632;
+}
 
-.instructions-list {
+/* INSTRUCTIONS SECTION */
+
+.card__instructions {
+  border-bottom: 1px solid #f3e5d7;
+  padding-bottom: 2em;
+}
+
+.card__instructions-list {
   gap: 0.625em;
   counter-reset: list-counter;
 }
 
-.instructions-list li {
+.card__instructions-item {
   display: flex;
   gap: 1.125em;
   counter-increment: list-counter;
   list-style: none;
 }
 
-.instructions-list li::before {
+.card__instructions-item::before {
   content: counter(list-counter) ".";
-  color: #7a284e;
+  color: #854632;
   font-weight: 700;
   padding-left: 0.5em;
 }
 
-/* nutrition list section */
+/* NUTRITION SECTION */
 
-.nutrition-list {
+.card__nutrition-list {
   margin-top: 1.5em;
 }
 
-.nutrition-list li {
+.card__nutrition-item {
   border-bottom: 1px solid #f3e5d7;
   padding: 0.9375em 0px 0.9375em 1.0625em;
   display: grid;
   grid-template-columns: 1fr 1fr;
 }
 
-.nutrition-list span {
+.card__nutrition-value {
   font-weight: 700;
   color: #854632;
 }
 
-.nutrition-list li:last-child {
+.card__nutrition-item:last-child {
   border-bottom: none;
   padding-bottom: 0px;
 }
 
-.nutrition-list li:first-child {
+.card__instructions-item:first-child {
   padding-top: 0px;
 }
 
-/* media queries */
+/* MEDIA QUERIES */
 
 @media (min-width: 616px) {
-  img {
+  .card__img {
     margin-bottom: 2.5em;
     border-radius: 12px;
   }
 
-  .main-container {
+  .card__content {
     padding: 0;
   }
 
-  main {
+  .card {
     padding: 2.5em;
     border-radius: 24px;
     margin: 8em auto;
@@ -168,11 +183,11 @@ h1 {
 }
 
 @media (min-width: 800px) {
-  main {
+  .card {
     max-width: 763px;
   }
 
-  img {
+  .card__img {
     height: 300px;
     object-fit: cover;
   }
